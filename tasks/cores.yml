@@ -1,7 +1,7 @@
 ---
 - name: Pause for 5 secondes to ensure that solr is really started
   ansible.builtin.pause:
-    seconds: 5
+    seconds: "{{ solr_service_wait_after_start }}"
 
 - name: Check current list of Solr cores.
   ansible.builtin.uri:

@@ -42,6 +42,10 @@ Whether to remove unneccessary documentation and examples from the solr director
 
 By default, this role will manage the `solr` service, ensuring it is enabled at system boot and is running. You can ensure Solr is stopped by setting `solr_service_state: stopped`, or you can disable this role's management of the `solr` service entirely by setting `solr_service_manage: false`. You may also want to set `solr_restart_handler_enabled: false` (documented later) in this case.
 
+    solr_service_wait_after_start: 5
+
+By default this role will wait 5 secondes before configuring cores to ensure that http call to get list of solr call can be answered. You can wait an other amount of seconds by setting `solr_service_wait_after_start: '10'` depending of the speed of your system.
+
     solr_install_dir: /opt
     solr_install_path: /opt/solr
 
